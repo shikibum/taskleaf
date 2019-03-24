@@ -11,14 +11,14 @@ html
     .app-title.navbar.navbar-expand-md.navbar-light.bg-light
       .navbar-brand Taskleaf
 
-      ul.navbaar-nav.ml-auto
+      ul.navbar-nav.ml-auto
         - if current_user
-          li.navbar-item = link_to 'タスク一覧', task_path, class: 'nav-link'
+          li.nav-item = link_to 'タスク一覧', tasks_path, class: 'nav-link'
           - if current_user.admin?
-            li.navbar-item = link_to 'ユーザー一覧', admin_users_path, class: 'nav-link'
+            li.nav-item = link_to 'ユーザー一覧', admin_users_path, class: 'nav-link'
           li.navbar-item = link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
         - else
-          li.navbar-item = link_to 'ログイン', login_path, class: 'nav-link'
+          li.nav-item = link_to 'ログイン', login_path, class: 'nav-link'
 
     .container
       - if flash.notice.present?
